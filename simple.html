@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR APP</title>
+     <!-- add icon link -->
+     <link rel = "icon" href="Images/calculator.ico" type = "image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="simple.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&display=swap" rel="stylesheet">
+
+</head>
+<body>
+     
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <img src="Images/calculator.png" alt="calculator Icon" width="50px" height="50px" style="margin-right: 30px;">
+    <a class="navbar-brand" href="#">CALCULATORS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a style="color: blue;" class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a style="color: blue;" class="nav-link" href="simple.html">Simple calculator</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button style="font-size: 23px;opacity: 3;" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+<div class="container-sm" id="main">
+  <h1 style="color: aliceblue; box-shadow: 5px 5px 2px 2px lightblue;">CALCULATOR WEB APP</h1>`
+  <h1 style="font-family: 'Arvo', serif;color: rgb(54, 27, 129);font-weight: bolder; box-shadow: 3px 3px 5px 4px gold; background-color: antiquewhite;">Simple Calculator</h1>
+  <button style="width: fit-content; font-size: 30px; background-color: black; color: white;" onclick="HideShow()"><a style="color: inherit; text-decoration: none; font-size: 20px;" href="#history">Double CLICK HERE TO VIEW HISTORY</a></button>
+
+<div>
+<p id="show"></p>
+  <input type="text" id="screen">
+</div>
+
+
+<div>
+    <div>
+        <button class="btn" onclick="getNumber('%')">%</button>
+        <button id="clear" onclick="clearResult()">C</button>
+    </div>
+    <div>
+      <button style="color: red; opacity: 1; background-color: rgb(235, 233, 236);" class="btn" onclick="getNumber('1/')">1/x</button>
+      <button style="color: rgb(36, 156, 32); opacity: 1; background-color: rgb(235, 233, 236);" class="btn" onclick="getSquare()">x<sup>2</sup></button>
+      <button style="color: rgb(31, 180, 39); opacity: 1; background-color: rgb(235, 233, 236);" class="btn" onclick="getCube()">x<sup>3</sup></button>
+      <button style="color: rgb(5, 25, 116); opacity: 1; background-color: rgb(235, 233, 236);" class="btn" onclick="getNumber('/')">/</button>    
+    </div>
+    <div>
+        <button class="btn" onclick="getNumber('7')">7</button>
+        <button class="btn" onclick="getNumber('8')">8</button>
+        <button class="btn" onclick="getNumber('9')">9</button>
+        <button style="background-color: aliceblue; color: black;" class="btn" onclick="getNumber('*')">X</button>
+    </div>
+    <div>
+        <button class="btn" onclick="getNumber('4')">4</button>
+        <button class="btn" onclick="getNumber('5')">5</button>
+        <button class="btn" onclick="getNumber('6')">6</button>
+        <button style="background-color: aliceblue; color: black; border: 0.5px solid black;" class="btn" onclick="getNumber('-')">-</button>
+    </div>
+    <div>
+        <button class="btn" onclick="getNumber('1')">1</button>
+        <button class="btn" onclick="getNumber('2')">2</button>
+        <button class="btn" onclick="getNumber('3')">3</button>
+        <button style="background-color: aliceblue; color: black; border: 0.5px solid black;" class="btn" onclick="getNumber('+')">+</button>
+    </div>
+    <div>
+        <button class="btn" onclick="getPI()">π</button>
+        <button class="btn" onclick="getNumber('0')">0</button>
+        <button class="btn" onclick="getNumber('.')">.</button>
+        <button class="btn" style="background-color: green;" onclick="getResult()">=</button>
+    </div>
+
+    <div id="history">
+      <table>
+        <tr>
+          <td style="margin: 10px;"><ol id="listinput"><span style="font-size: 40px;color: red;background-color: aliceblue;">Input</span></ol></td>
+         <td style="margin-left: 50px; color: black;"><ul style="list-style-type: circle;" id="list"><span style="font-size: 40px;  color: rgb(34, 114, 27); background-color: aliceblue;">Output</span></ol></td>
+         <td style="margin-left: 50px; color: black;"><ul style="list-style-type: circle;" id="listtime"><span style="font-size: 40px;  color: rgb(221, 243, 24); background-color: aliceblue;">Time</span></ol></td>
+         <hr>
+        </tr>
+    </table>
+    </div>
+</div>
+
+
+</body>
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</html>
